@@ -1,0 +1,48 @@
+{
+  "name": "name-suggestion-index",
+  "version": "1.0.6",
+  "license": "BSD-3-Clause",
+  "repository": "osmlab/name-suggestion-index",
+  "author": "Bryan Housel <bryan@mapbox.com>",
+  "description": "Canonical common brand names for OpenStreetMap",
+  "keywords": [
+    "OpenStreetMap",
+    "OSM",
+    "names",
+    "brands",
+    "franchises",
+    "javascript",
+    "canonicalization"
+  ],
+  "main": "dist/index.js",
+  "module": "index.mjs",
+  "scripts": {
+    "dist": "node build_nameSuggestions.js && rollup -c",
+    "build": "node build_filterNames",
+    "logos": "node fetch_logos",
+    "wikimatch": "node match_wikiTags",
+    "test": "node validate"
+  },
+  "devDependencies": {
+    "clear": "^0.1.0",
+    "colors": "^1.1.2",
+    "diacritics": "^1.3.0",
+    "fs-extra": "^7.0.0",
+    "json-stringify-pretty-compact": "^1.1.0",
+    "jsonschema": "^1.2.4",
+    "linebyline": "^1.3.0",
+    "node-fetch": "^2.2.0",
+    "rollup": "^0.66.0",
+    "rollup-plugin-json": "^3.0.0",
+    "shelljs": "^0.8.0",
+    "xmlbuilder": "^10.0.0"
+  },
+  "optionalDependencies": {
+    "osmium": "^0.5.7",
+    "twitter": "^1.7.1",
+    "wikidata-sdk": "^5.15.0"
+  },
+  "engines": {
+    "node": ">=6.4.0"
+  }
+}
